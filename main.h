@@ -4,13 +4,13 @@
 #include <stdarg.h>
 
 /**
- * struct specifiers - Struct op
+ * struct specifiers - Struct for specifiers
  * @spec: format specifiers that we check
  * @func: The function associated
  **/
 typedef struct specifiers
 {
 	char *spec;
-	int (*func)(va list arg);
+	int (*func)(va_list arg);
 } spec_type;
 #endif
