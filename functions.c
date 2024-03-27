@@ -22,3 +22,28 @@ int print_char(va_list args)
 	_putchar(c);
 	return (1);
 }
+/**
+ * print_str - prints string
+ * @args: number of arguments
+ * Return: i (on success)
+ **/
+int print_str(va_list args)
+{
+	char *str = va_arg(args, char *);
+	int i;
+
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	else
+	{
+		for (i = 0; str[i] != '\0'; i++)
+		{
+			_putchar(str[i]);
+		}
+	}
+	return (i);
+}
+
