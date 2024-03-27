@@ -1,0 +1,24 @@
+#include "main.h"
+#include <stdio.h>
+/**
+ * _putchar - prints a character
+ * @c: the character to be printed
+ * Return: 1 (on success)
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+/**
+ * print_char - prints a character
+ * @args:number of arguments
+ * Return: 1 (on success)
+*/
+int print_char(va_list args)
+{
+	char c;
+
+	c = va_arg(args, int);
+	_putchar(c);
+	return (1);
+}
