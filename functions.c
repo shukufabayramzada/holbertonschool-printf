@@ -50,15 +50,3 @@ int print_str(va_list args)
 	}
 	return (i);
 }
-
-/**
- * print_perc - prints a percent sign
- * @args: number of arguments
- * Return: 1 (on success)
- */
-int print_perc(va_list args)
-{
-	(void)args;
-	_putchar('%');
-	return (1);
-}
