@@ -42,17 +42,7 @@ int print_str(va_list args)
 	{
 		write(1, "(null)", 6);
 		z = z + 6;
-		return (6);
-	}
-	
-	if (str == NULL)
-	{
-		while (null_str[i] != '\0')
-		{
-			_putchar(null_str[i]);
-			i++;
-			z++;
-		}
+		return (z);
 	}
 	else
 	{
