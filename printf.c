@@ -40,43 +40,13 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int count = 0;
 	va_list(args);
-	int (*func_ptr)(va_list);
 
 	va_start(args, format);
 
 	if (!format)
 	{
 		return (-1);
-	}
-	if (*format)
-	{
-		while (format[i])
-		{
-			if (format[i] == '%' && (!format[i + 1] || format[i + 1] == '\0'))
-			{
-				return (-1);
-			}
-			if (format[i] == '%')
-			{
-				func_ptr = cmp_func(format[i + 1]);
-				if (func_ptr)
-				{
-					count += func_ptr(args);
-					i += 2;
-					continue;
-				}
-			}
-			_putchar(format[i]);
-			i++;
-			count++;
-		}
-	}
-	va_end(args);
-	return (count);
-}
-
-
-	/**		
+	}	
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -112,4 +82,3 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
-	**/
