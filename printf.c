@@ -22,9 +22,9 @@ int (*cmp_func(const char s))(va_list)
 	};
 	int i;
 
-	for (i = 0; types[i].spec != '\0'; i++)
+	for (i = 0; *(types[i].spec) != '\0'; i++)
 	{
-		if (types[i].spec == s)
+		if (*(types[i].spec) == s)
 		{
 			return (types[i].func);
 		}
