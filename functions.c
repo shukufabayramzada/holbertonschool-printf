@@ -36,8 +36,7 @@ int print_str(va_list args)
 	char *str = va_arg(args, char *);
 	int i;
 	unsigned int z = 0;
-	char *null_str = "(null)";
-
+	
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
