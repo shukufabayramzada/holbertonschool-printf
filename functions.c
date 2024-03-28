@@ -35,7 +35,6 @@ int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
 	int i;
-<<<<<<< HEAD
 	unsigned int z;
 
 	if (str == NULL)
@@ -43,7 +42,7 @@ int print_str(va_list args)
 		write(1, "(null)", 6);
 		z = z + 6;
 		return (z);
-=======
+	}
 	char *null_str = "(null)";
 
 	if (str == NULL)
@@ -52,8 +51,8 @@ int print_str(va_list args)
 		{
 			_putchar(null_str[i]);
 			i++;
+			z++;
 		}
->>>>>>> origin/main
 	}
 	else
 	{
