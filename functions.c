@@ -38,7 +38,12 @@ int print_str(va_list args)
 
 	if (str == NULL)
 	{
-		str = "(null)";
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
 	}
 	else
 	{
