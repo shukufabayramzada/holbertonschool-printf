@@ -39,6 +39,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0;
 	int count = 0;
+	int (*func)(va_list);
 	va_list(args);
 
 	va_start(args, format);
@@ -63,21 +64,25 @@ int _printf(const char *format, ...)
 				count++;
 				i++;
 			}
-			else if (cmp_func(format[i + 1]) != NULL)
-			{
-				count += (cmp_func(format[i + 1]))(args);
-				i++;
-			}
 			else
 			{
-				_putchar('%');
-				_putchar(format[i + 1]);
-				count += 2;
+				func = cmp_func(format[i + 1]);
+				if (func != NULL)
+				{
+					count += func(args);
+				}
+				else
+				{
+					_putchar('%');
+					_putchar(format[i + 1]);
+					count += 2;
+				}
 				i++;
 			}
 		}
 		else
 		{
+	
 			_putchar(format[i]);
 			count++;
 		}
