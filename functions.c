@@ -38,7 +38,7 @@ int print_str(va_list args)
 
 	if (str == NULL)
 	{
-		str = "(null)"
+		str = "(null)";
 	}
 	else
 	{
