@@ -20,10 +20,12 @@ int _putchar(char c)
 int print_char(va_list args)
 {
 	char c;
+	unsigned int z = 0;
 
 	c = va_arg(args, int);
 	_putchar(c);
-	return (1);
+	z++;
+	return (z);
 }
 
 /**
