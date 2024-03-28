@@ -45,6 +45,7 @@ int _printf(const char *format, ...)
 
 	if (!format)
 	{
+		va_end(args);
 		return (-1);
 	}	
 	for (i = 0; format[i] != '\0'; i++)
@@ -53,6 +54,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0')
 			{
+				va_end(args);
 				return (-1);
 			}
 			else if (format[i + 1] == '%')
