@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
  * _putchar - prints a character
  * @c: the character to be printed
@@ -9,11 +10,12 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
 /**
  * print_char - prints a character
- * @args:number of arguments
+ * @args: number of arguments
  * Return: 1 (on success)
-*/
+ */
 int print_char(va_list args)
 {
 	char c;
@@ -22,11 +24,12 @@ int print_char(va_list args)
 	_putchar(c);
 	return (1);
 }
+
 /**
  * print_str - prints string
  * @args: number of arguments
- * Return: i (on success)
- **/
+ * Return: length of the string (on success)
+ */
 int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
@@ -47,3 +50,14 @@ int print_str(va_list args)
 	return (i);
 }
 
+/**
+ * print_perc - prints a percent sign
+ * @args: number of arguments
+ * Return: 1 (on success)
+ */
+int print_perc(va_list args)
+{
+	(void)args;
+	_putchar('%');
+	return (1);
+}
