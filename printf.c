@@ -15,18 +15,21 @@
 int (*cmp_func(const char s))(va_list)
 {
 	spec_type types[] = {
-		{'c', print_char},
-		{'s', print_str},
-		{'%', print_perc},
+		{"c", print_char},
+		{"s", print_str},
+		{"%", print_perc},
 		{'\0', NULL}
 	};
-	int i = 0;
+	int i;
 
-	while (types[i].spec != NULL && types[i].spec != s)
+	for (i = 0; types[i].spec != '\0'; i++)
 	{
-		i++;
+		if (types[i].spec == s)
+		{
+			return (types[i].func);
+		}
 	}
-	return (types[i].func);
+	return (0);
 }
 /**
  * _printf -- print elements
@@ -37,35 +40,43 @@ int _printf(const char *format, ...)
 {
 	int i = 0;
 	int count = 0;
-	va_list args;
+	va_list(args);
 
-	int (*func_ptr)(va_list);
-
-	va_start(args, format);
-	if (format == NULL)
+	if (!format)
 	{
 		return (-1);
 	}
-	
-	while (format[i])
+	va_start(args, format);
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%' && (format[i + 1] == NULL || format[i + 1] == '\0'))
-		{
-			return (-1);
-		}
 		if (format[i] == '%')
 		{
-			func_ptr = cmp_func(format[i + 1]);
-			if (func_ptr)
+			if (format[i + 1] == '\0')
 			{
-				count += func_ptr(args);
-				i += 2;
-				continue;
+				return (-1);
+			}
+			else if (format[i + 1] == '%')
+			{
+				_putchar('%');
+				count++;
+				i++;
+			}
+			else if (cmp_func(format[i + 1]) != NULL)
+			{
+				count += (cmp_func(format[i + 1]))(args);
+				i++;
+			}
+			else
+			{
+				_putchar(format[i]);
+				count++;
 			}
 		}
-		_putchar(format[i]);
-		i++;
-		count++;
+		else
+		{
+			_putchar(format[i]);
+			count++;
+		}
 	}
 	va_end(args);
 	return (count);
