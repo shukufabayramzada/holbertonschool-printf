@@ -35,18 +35,21 @@ int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
 	int i;
+	unsigned int z;
 
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
-		return (6);
+		z = z + 6;
+		return (z);
 	}
 	else
 	{
 		for (i = 0; str[i] != '\0'; i++)
 		{
 			_putchar(str[i]);
+			z++
 		}
 	}
-	return (i);
+	return (z);
 }
