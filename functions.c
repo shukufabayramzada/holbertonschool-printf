@@ -36,15 +36,15 @@ int print_str(va_list args)
 	char *str = va_arg(args, char *);
 	int i;
 	unsigned int z;
+	char *null_str = "(null)";
 
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
 		z = z + 6;
-		return (z);
+		return (6);
 	}
-	char *null_str = "(null)";
-
+	
 	if (str == NULL)
 	{
 		while (null_str[i] != '\0')
@@ -59,7 +59,7 @@ int print_str(va_list args)
 		for (i = 0; str[i] != '\0'; i++)
 		{
 			_putchar(str[i]);
-			z++
+			z++;
 		}
 	}
 	return (z);
