@@ -15,4 +15,5 @@ typedef struct specifiers
 } spec_type;
 
 int _printf(const char *format, ...);
+int (*cmp_func(const char s))(va_list);
 #endif
