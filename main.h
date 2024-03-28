@@ -15,6 +15,4 @@ typedef struct specifiers
 } spec_type;
 
 int _printf(const char *format, ...);
-int _putchar(char c);
-int print_char(va_list args);
 #endif
