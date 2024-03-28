@@ -14,7 +14,7 @@
 
 int (*cmp_func(const char s))(va_list)
 {
-	spec_type tyeps[] = {
+	spec_type types[] = {
 		{'c', print_char},
 		{'s', print_str},
 		{'%', print_perc},
@@ -41,6 +41,7 @@ int _printf(const char *format, ...)
 
 	int (*func_ptr)(va_list);
 
+	va_start(args, format);
 	if (format == NULL)
 	{
 		return (-1);
