@@ -68,8 +68,10 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_putchar(format[i]);
-				count++;
+				_putchar('%');
+				_putchar(format[i + 1]);
+				count += 2;
+				i++
 			}
 		}
 		else
