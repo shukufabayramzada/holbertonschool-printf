@@ -35,15 +35,15 @@ int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
 	int i;
+	char *null_str = "(null)";
 
 	if (str == NULL)
 	{
-		_putchar('(');
-		_putchar('n');
-		_putchar('u');
-		_putchar('l');
-		_putchar('l');
-		_putchar(')');
+		while (null_str[i] != '\0')
+		{
+			_putchar(null_str[i]);
+			i++;
+		}
 	}
 	else
 	{
