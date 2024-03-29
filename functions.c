@@ -50,6 +50,9 @@ int print_str(va_list args)
 	}
 	return (i);
 }
+int print_int(va_list args)
+{
+}
 
 
 
