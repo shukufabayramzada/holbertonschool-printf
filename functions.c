@@ -68,24 +68,21 @@ int print_int(va_list args)
 		i++;
 		tmp = -numb;
 	}
-	if (numb >= 0 && numb <= 9)
+	else
 	{
-		_putchar(numb + 48);
-		i++;
+		tmp = numb;
 	}
-	if (numb > 9)
+	while (tmp / div > 9)
 	{
-		while (tmp /div > 9)
-		{
-			div *= 10;
-		}
-		while (div >= 1)
-		{
-			_putchar ((tmp / div) + 48);
-			i++;
-			tmp %= div;
-			div /= 10;
-		}
+		div *= 10;
+	}
+	while (div >= 1)
+	{
+		_putchar ((tmp / div) + 48);
+		i++;
+		tmp %= div;
+		div /= 10;
+	}
 	}
 	return (i);
 
