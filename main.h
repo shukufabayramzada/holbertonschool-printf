@@ -13,7 +13,7 @@
  **/
 typedef struct specifiers
 {
-	char *spec;
+	char spec;
 	int (*func)(va_list);
 } spec_type;
 
