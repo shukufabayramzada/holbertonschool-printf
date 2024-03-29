@@ -50,3 +50,47 @@ int print_str(va_list args)
 	}
 	return (i);
 }
+/**
+ * print_int - print integers
+ * @args: number of arguments
+ * Return: count
+ **/
+int print_int(va_list args)
+{
+	int count = 0;
+	int numb = va_arg(args, int);
+	int tmp,base;
+
+	if (numb < 0)
+	{
+		_putchar('-');
+		count++;
+		tmp = -numb;
+	}
+	if (numb >= 0 && numb <= 9)
+	{
+		tmp = numb;
+		_putchar(temp + 48);
+		count++;
+	}
+	if (numb > 9)
+	{
+		base = 10;
+		while (numb / base > 9)
+		{
+			base *= 10;
+		}
+		while (base > 0)
+		{
+			tmp = numb / base;
+			numb = numb % base;
+			_putchar(temp + 48);
+			base = base / 10;
+			count++;
+		}
+	}
+	return (count);
+}
+
+
+
