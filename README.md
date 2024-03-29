@@ -76,7 +76,7 @@ man 3 _printf
 This README provides an overview of the `_printf` function and the associated `man_3_printf` manual page. For further details, consult the documentation in the specified GitHub repository.
 ## Authors
 
-- [@hukufabayramzada](https://github.com/shukufabayramzada)
+- [@shukufabayramzada](https://github.com/shukufabayramzada)
 - [@sayka88](https://github.com/sayka88)
 
 
