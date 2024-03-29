@@ -20,12 +20,10 @@ int _putchar(char c)
 int print_char(va_list args)
 {
 	char c;
-	unsigned int z = 0;
 
 	c = va_arg(args, int);
 	_putchar(c);
-	z++;
-	return (z);
+	return (1);
 }
 
 /**
@@ -37,21 +35,18 @@ int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
 	int i;
-	unsigned int z = 0;
 	
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
-		z = z + 6;
-		return (z);
+		return (6);
 	}
 	else
 	{
 		for (i = 0; str[i] != '\0'; i++)
 		{
 			_putchar(str[i]);
-			z++;
 		}
 	}
-	return (z);
+	return (i);
 }
