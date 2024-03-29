@@ -19,9 +19,9 @@ int _putchar(char c)
  */
 int print_char(va_list args)
 {
-	char c;
+	char *c;
 
-	c = va_arg(args, int);
+	c = va_arg(args, char *);
 	_putchar(c);
 	return (1);
 }
