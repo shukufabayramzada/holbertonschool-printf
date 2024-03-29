@@ -9,29 +9,21 @@
  **/
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int count = 0;
+	int i = 0, count = 0
 
 	va_list(args);
 	va_start(args, format);
-
 	if (!format)
-	{
 		return (-1);
-	}
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-			{
-			return (-1);
-			}
+			if (!format[i + 1])
+				return (-1);
 			else if (format[i + 1] == '%')
 			{
-				_putchar('%');
-			count++;
-			i++;
+				count += _putchar('%');
 			}
 			else if (cmp_func(format[i + 1]) != NULL)
 			{
@@ -39,18 +31,11 @@ int _printf(const char *format, ...)
 			i++;
 			}
 			else
-			{
-			_putchar('%');
-			_putchar(format[i + 1]);
-			count += 2;
-			i++;
-			}
+				count += _putchar('%') + _putchar(format[i + 1]);
+				i++;
 		}
 		else
-		{
-		_putchar(format[i]);
-		count++;
-		}
+			count += _putchar(format[i]);
 	}
 	va_end(args);
 	return (count);
