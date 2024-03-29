@@ -17,6 +17,8 @@ int (*cmp_func(const char s))(va_list)
 	spec_type types[] = {
 		{'c', print_char},
 		{'s', print_str},
+		{'i', print_int},
+		{'d', print_int},
 		{'\0', NULL}
 	};
 	int i;
