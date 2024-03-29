@@ -83,9 +83,7 @@ int print_int(va_list args)
 		tmp %= div;
 		div /= 10;
 	}
-	}
 	return (i);
-
 }
 
 
