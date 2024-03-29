@@ -1,3 +1,7 @@
+#include "main.h"
+#include "functions.h"
+#include <stdarg.h>
+#include <stdio.h>
 /**
  * _printf -- print elements
  * @format: format specifier
