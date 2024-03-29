@@ -1,47 +1,26 @@
-_printf
-
-NAME
-_printf - Print formatted output
-
-SYNOPSIS
-#include "main.h"
-
-int _printf(const char *format, ...);
-
-DESCRIPTION
-The _printf function writes the output according to the format specified by the format string.
-
-The format string may contain format specifiers, which begin with the percent character '%', followed by a conversion specifier.
-
-The conversion specifiers supported by _printf are:
-
-%d, %i    Prints a signed integer.
-
-%s        Prints a null-terminated string.
-
-%c        Prints a character.
-
-%%        Prints a percent character '%'.
-
-RETURN VALUE
-The _printf function returns the number of characters printed on success or a negative value on error.
-
-EXAMPLES
-Example 1: Printing an integer:
-	int num = 42;
-	_printf("The number is: %d\n", num);
-
-Example 2: Printing a string:
-	char str[] = "Hello, world!";
-	_printf("%s\n", str);
-
-Example 3: Printing a character:
-	char ch = 'A';
-	_printf("Character: %c\n", ch);
-
-Example 4: Printing a percent character:
-	_printf("This is a percent sign: %%\n");
-
-AUTHORS
-	Shukufa Bayramzada
-	Sayyara Yusupova
+.TH man 3 "29 March 2024" "0.01" "_printf man page"
+.SH NAME
+.B _printf
+- A simple re-creation of the printf function
+.SH SYNOPSIS
+To use this function the #include "main.h" header is needed.
+.SH DESCRIPTION
+The _printf() function produces output according to a format which is described
+below. This function write its output to the stdout, the standard output stream.
+.SH USAGE
+To use _printf you have to use the following key characters preceeded by % symbol.
+.RS 3
+%c : To be used to print characters
+%s : To be used to print strings
+%d : To print integers of max and min size of an int type
+%i : To print integers of max and min size of an int type
+.RE
+The _printf() function returns an integer representing the number of symbols
+printed not counting \\0 for the string.
+.SH SEE ALSO
+.I printf(3)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Shukufa Bayramzada
+Sayyara Yusupova
