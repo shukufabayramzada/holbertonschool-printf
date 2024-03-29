@@ -1,4 +1,4 @@
-#ifndef MAIN_H
+i#ifndef MAIN_H
 #define MAIN_H
 #include <stdio.h>
 #include <stdarg.h>
@@ -14,7 +14,7 @@
 typedef struct specifiers
 {
 	char *spec;
-	int (*func)(va_list);
+	int (*(*func))(va_list);
 } spec_type;
 
 int _printf(const char *format, ...);
