@@ -61,7 +61,7 @@ Following these guidelines will help ensure that your code compiles successfully
 
 The `man_3_printf` manual page provides documentation for the `_printf` function. It includes information about the function's usage, prototype, return value, and supported conversion specifiers.
 
-## Flowchart diagram '_printf'
+## Flowchart diagram _printf
 
 ![Flowchart diagram for_printf function](https://github.com/shukufabayramzada/holbertonschool-printf/blob/main/%20printf_%20flowchart%20_diagram.drawio.png)
 
