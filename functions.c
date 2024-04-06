@@ -85,6 +85,32 @@ int print_int(va_list args)
 	}
 	return (i);
 }
+/**
+ * print_binary - Prints the binary representation of an unsigned integer
+ * @args: The va_list containing the unsigned integer
+ * Return: The number of characters printed
+ **/
+int print_binary(va_list args)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	int count = 0;
+	int binary[32];
+	int i = 0, j;
+
+	while (num > 0)
+	{
+		binary[i] = num % 2;
+		num /= 2;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(binary[j] + '0');
+		count++;
+	}
+	return (count);
+}
+
 
 
 
